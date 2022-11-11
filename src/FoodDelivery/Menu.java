@@ -11,5 +11,10 @@ public class Menu {
         this.numItems = theNumItems;
     }
 
+    // Methods
+    public int getNumItems() {
+        return numItems.length;
+    }
+
 
 }
