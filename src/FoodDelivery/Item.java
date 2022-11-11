@@ -15,11 +15,11 @@ public abstract class Item {
     }
 
     // Methods
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 
