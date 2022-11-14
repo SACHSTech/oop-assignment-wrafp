@@ -9,8 +9,8 @@ public class Food extends Item {
     private boolean isGlutenFree;
 
     // Constructor
-    public Food(boolean theIsSpicy, boolean theIsVegan, boolean theIsGlutenFree) {
-        super("apple", 15.00); // temporarily static to test functionality, will fix later - super(getName(), getPrice());
+    public Food(String theName, double thePrice, boolean theIsSpicy, boolean theIsVegan, boolean theIsGlutenFree) {
+        super(theName, thePrice); // temporarily static to test functionality, will fix later - super(getName(), getPrice());
         this.isSpicy = theIsSpicy;
         this.isVegan = theIsVegan;
         this.isGlutenFree = theIsGlutenFree;

@@ -1,7 +1,7 @@
 package FoodDelivery;
 import FoodDelivery.*;
 
-public abstract class Item {
+public class Item {
     
     // Instance variables
     private String name;
