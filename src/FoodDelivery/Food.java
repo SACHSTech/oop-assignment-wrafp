@@ -15,4 +15,8 @@ public class Food extends Item {
         this.isVegan = theIsVegan;
         this.isGlutenFree = theIsGlutenFree;
     }
+
+    public boolean getIsSpicy() {
+        return isSpicy;
+    }
 }
