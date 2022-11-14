@@ -10,7 +10,7 @@ public class Food extends Item {
 
     // Constructor
     public Food(boolean theIsSpicy, boolean theIsVegan, boolean theIsGlutenFree) {
-        super(getName(), getPrice()); // temporarily static to test functionality, will fix later
+        super("apple", 15.00); // temporarily static to test functionality, will fix later - super(getName(), getPrice());
         this.isSpicy = theIsSpicy;
         this.isVegan = theIsVegan;
         this.isGlutenFree = theIsGlutenFree;
