@@ -19,4 +19,8 @@ public class Food extends Item {
     public boolean getIsSpicy() {
         return isSpicy;
     }
+
+    public boolean getIsVegan() {
+        return isVegan;
+    }
 }
