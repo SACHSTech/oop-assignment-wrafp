@@ -8,9 +8,8 @@ public class Drink extends Item {
     private boolean isHot;
 
     // Constructor
-    public Drink(String theName, int thePrice, String theSize, boolean theIsHot) {
+    public Drink(String theName, int thePrice, boolean theIsHot) {
         super(theName, thePrice);
-        this.size = theSize;
         this.isHot = theIsHot;
     }
 
@@ -21,5 +20,9 @@ public class Drink extends Item {
 
     public boolean getIsHot() {
         return isHot;
+    }
+
+    public void setSize(String theSize) {
+        this.size = theSize;
     }
 }

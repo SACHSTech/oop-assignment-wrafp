@@ -23,8 +23,7 @@ public class Item {
         return price;
     }
 
-    public boolean setIsBought() {
+    public void setIsBought() {
         isBought = true;
-        return isBought;
     }
 }
