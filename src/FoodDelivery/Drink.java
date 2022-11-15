@@ -19,5 +19,7 @@ public class Drink extends Item {
         return size;
     }
 
-    
+    public boolean getIsHot() {
+        return isHot;
+    }
 }
