@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Menu {
 
     // Arraylist for holding objects of Item objects
-    ArrayList<Item> menuItems = new ArrayList<>();
+    ArrayList<Item> cart = new ArrayList<>();
+    ArrayList<Item> menu = new ArrayList<>();
 
     // Instance Variables
     private int numItems;

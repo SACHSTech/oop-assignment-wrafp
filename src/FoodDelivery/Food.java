@@ -16,6 +16,7 @@ public class Food extends Item {
         this.isGlutenFree = theIsGlutenFree;
     }
 
+    // Methods
     public boolean getIsSpicy() {
         return isSpicy;
     }
@@ -26,5 +27,9 @@ public class Food extends Item {
 
     public boolean getIsGlutenFree() {
         return isGlutenFree;
+    }
+
+    public String toString() {
+        return super.getName() + " " + super.getPrice() + "\nAttributes: (Spicy: " + isSpicy + ") (Vegan: " + isVegan + ") (Gluten-Free: " + isGlutenFree + ")";  
     }
 }
