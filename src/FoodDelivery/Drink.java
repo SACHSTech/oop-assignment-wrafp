@@ -4,7 +4,6 @@ import FoodDelivery.*;
 public class Drink extends Item {
     
     // Instance variables
-    private String size;
     private boolean isHot;
 
     // Constructor
@@ -14,15 +13,11 @@ public class Drink extends Item {
     }
 
     // Methods
-    public String getSize() {
-        return size;
-    }
-
     public boolean getIsHot() {
         return isHot;
     }
 
-    public void setSize(String theSize) {
-        this.size = theSize;
+    public String toString() {
+        return super.getName() + " " + super.getPrice() + "\nAttributes: (Size: " + isSpicy + ") (Vegan: " + isVegan + ") (Gluten-Free: " + isGlutenFree + ")";  
     }
 }
