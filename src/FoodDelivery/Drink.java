@@ -18,6 +18,6 @@ public class Drink extends Item {
     }
 
     public String toString() {
-        return super.getName() + " " + super.getPrice() + "\nAttributes: (Size: " + isSpicy + ") (Vegan: " + isVegan + ") (Gluten-Free: " + isGlutenFree + ")";  
+        return super.getName() + " | Price: $" + super.getPrice() + "\n Hot: " + isHot + "\n";  
     }
 }

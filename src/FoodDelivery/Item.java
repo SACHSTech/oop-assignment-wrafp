@@ -26,4 +26,5 @@ public class Item {
     public void setIsBought() {
         isBought = true;
     }
+
 }

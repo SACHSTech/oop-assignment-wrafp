@@ -30,6 +30,6 @@ public class Food extends Item {
     }
 
     public String toString() {
-        return super.getName() + " " + super.getPrice() + "\nAttributes: (Spicy: " + isSpicy + ") (Vegan: " + isVegan + ") (Gluten-Free: " + isGlutenFree + ")";  
+        return super.getName() + " | Price: $" + super.getPrice() + " |\nAttributes: Spicy: " + isSpicy + " | Vegan: " + isVegan + " | Gluten-Free: " + isGlutenFree + " |\n";  
     }
 }

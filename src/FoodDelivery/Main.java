@@ -12,8 +12,9 @@ public class Main {
         BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Item> menu = new ArrayList<>();
 
-        System.out.println("Welcome to the Online Ordering App!");
-        System.out.println("Accessing Outrageous Food Place");
+        System.out.println("\nWelcome to the Online Ordering App!");
+        System.out.println("\nAccessing Outrageous Food Place's Menu");
+        System.out.println("----------------------------------------------------------------");
         
         // Create menu objects
         Food pizza = new Food("Pizza", 16, false, false, false);
@@ -28,7 +29,7 @@ public class Main {
         Drink icedcoffee = new Drink ("Iced Coffee", 5, false);
         Drink pepsi = new Drink ("Pepsi", 3, false);
         Drink cola = new Drink ("Coca Cola", 3, false);
-        Drink water = new Drink ("Water", 15, false);
+        Drink water = new Drink ("Water", 2, false);
         Drink greentea = new Drink ("Green Tea", 5, true);
 
         menu.add(pizza);
@@ -46,14 +47,15 @@ public class Main {
         menu.add(water);
         menu.add(greentea);
 
-        while (true) {
+        int a = 1;
+        while (a < 2) {
             for (int i = 0; i < menu.size(); i++) {
-                menu.get(i);
+                System.out.println("(" + i + ")\n" + menu.get(i));
             }
             
-            System.out.println("\nSelect menu option");
+            System.out.println("---------------------------");
 
-
+            a++;
         }
         
         
