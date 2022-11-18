@@ -11,6 +11,10 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Item> menu = new ArrayList<>();
+        ArrayList<Item> cart = new ArrayList<>();
+
+        // Variable initialization
+        double total = 0;
 
         System.out.println("\nWelcome to the Online Ordering App!");
         System.out.println("\nAccessing Outrageous Food Place's Menu");
@@ -47,17 +51,31 @@ public class Main {
         menu.add(water);
         menu.add(greentea);
 
-        int a = 1;
-        while (a < 2) {
+
+        while (true) {
             for (int i = 0; i < menu.size(); i++) {
                 System.out.println("(" + i + ")\n" + menu.get(i));
             }
             
             System.out.println("---------------------------");
+            System.out.println("Select your order: (0-13)-Add to Cart (99)-Checkout (100)-Cancel\nEnter corresponding value: ");
+            int option = Integer.parseInt(key.readLine());
 
-            a++;
+            if (option >= 0 && option <= 13) {
+                cart.add(menu.get(option));
+                total += menu.get(option).getPrice();
+            }
+
+            else if (option == 100) {
+                System.exit(option);
+            }
+            else if (option == 99) {
+                System.out.println("\nProceeding to Cart...");
+                break;
+            }
         }
         
+        System.out.println("price: " + total);
         
        
         
