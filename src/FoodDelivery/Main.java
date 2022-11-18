@@ -1,6 +1,10 @@
 package FoodDelivery;
 import FoodDelivery.*;
+
+import static org.junit.jupiter.api.DynamicTest.stream;
+
 import java.io.*;
+import java.text.*;
 import java.util.ArrayList;
 
 /**
@@ -9,17 +13,23 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        // Initialize 
         BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Item> menu = new ArrayList<>();
         ArrayList<Item> cart = new ArrayList<>();
+        NumberFormat currencyFormat = new DecimalFormat("#,##0.00");
 
         // Variable initialization
         double total = 0;
+        double discount = 0;
+        double finalTotal;
+        double tax;
+        
 
         System.out.println("\nWelcome to the Online Ordering App!");
         System.out.println("\nAccessing Outrageous Food Place's Menu");
         System.out.println("----------------------------------------------------------------");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         
         // Create menu objects
         Food pizza = new Food("Pizza", 16, false, false, false);
@@ -56,7 +66,7 @@ public class Main {
         while (true) {
             for (int i = 0; i < menu.size(); i++) {
                 System.out.println("(" + i + ")\n" + menu.get(i));
-                Thread.sleep(200);
+                Thread.sleep(150);
             }
             
             System.out.println("---------------------------");
@@ -70,18 +80,39 @@ public class Main {
             }
 
             else if (option == 100) {
+                System.out.println("Exiting program...");
                 System.exit(option);
             }
             else if (option == 99) {
                 System.out.println("\nProceeding to Cart...");
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 break;
             }
+            else { 
+                System.out.println("Invalid value.");
+            }
 
-            Thread.sleep(1000);
+            Thread.sleep(800);
         }
         
-        System.out.println("price: " + total);
+        // Check for discount 
+        if (total >= 50) {
+            discount = total * .1;
+        }
+        else if (total >= 100) {
+            discount = total * .2;
+        }
+
+        System.out.println("Total: $ " + currencyFormat.format(total));
+        tax = (total - discount) * 0.13;
+        finalTotal = tax + total;
+        
+        if (discount > 0) {
+            System.out.println("Discount: -$" + currencyFormat.format(discount));
+        }
+
+        System.out.println("Tax: $" + currencyFormat.format(tax));
+        System.out.println("Subtotal: $" + currencyFormat.format(finalTotal));
         
        
         
