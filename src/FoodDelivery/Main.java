@@ -19,6 +19,7 @@ public class Main {
         System.out.println("\nWelcome to the Online Ordering App!");
         System.out.println("\nAccessing Outrageous Food Place's Menu");
         System.out.println("----------------------------------------------------------------");
+        Thread.sleep(3000);
         
         // Create menu objects
         Food pizza = new Food("Pizza", 16, false, false, false);
@@ -55,11 +56,13 @@ public class Main {
         while (true) {
             for (int i = 0; i < menu.size(); i++) {
                 System.out.println("(" + i + ")\n" + menu.get(i));
+                Thread.sleep(200);
             }
             
             System.out.println("---------------------------");
             System.out.println("Select your order: (0-13)-Add to Cart (99)-Checkout (100)-Cancel\nEnter corresponding value: ");
             int option = Integer.parseInt(key.readLine());
+            System.out.println("---------------------------");
 
             if (option >= 0 && option <= 13) {
                 cart.add(menu.get(option));
@@ -71,8 +74,11 @@ public class Main {
             }
             else if (option == 99) {
                 System.out.println("\nProceeding to Cart...");
+                Thread.sleep(3000);
                 break;
             }
+
+            Thread.sleep(1000);
         }
         
         System.out.println("price: " + total);
