@@ -1,6 +1,10 @@
 package FoodDelivery;
 import FoodDelivery.*;
 
+/**
+ * Food Class 
+ * @author: K.huang
+ */
 public class Food extends Item {
     
     // Instance variables

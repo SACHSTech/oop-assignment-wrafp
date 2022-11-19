@@ -1,6 +1,10 @@
 package FoodDelivery;
 import FoodDelivery.*;
 
+/**
+ * Restaurant Class 
+ * @author: K.huang
+ */
 public class Restaurant {
     
     // Instance Variables
@@ -15,5 +19,4 @@ public class Restaurant {
     public String getPlaceName() {
         return placeName;
     }
-
 }

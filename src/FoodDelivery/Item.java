@@ -1,8 +1,11 @@
 package FoodDelivery;
 import FoodDelivery.*;
 
+/**
+ * Item Class 
+ * @author: K.huang
+ */
 public class Item {
-    
     // Instance variables
     private String name;
     private double price;

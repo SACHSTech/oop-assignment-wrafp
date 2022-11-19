@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Then it will go through a while loop where it continuously output the menu options with all of their properties (eg. spiciness, price). 
  * The user can input a choice (0-13) to add to cart, (99) to move to the checkout stage, or (100) to exit the program. 
  * Once in the checkout stage it will output the user's cart using an arraylist and calculate the total, tax, subtotal, and any applicable discounts.
- * 
+ * @author: K.huang
  */
 
 public class Main {
@@ -46,6 +46,7 @@ public class Main {
         Drink water = new Drink ("Water", 2, false);
         Drink greentea = new Drink ("Green Tea", 5, true);
 
+        // Add item objects into the menu arraylist
         menu.add(pizza);
         menu.add(salad);
         menu.add(chickensoup);
@@ -61,14 +62,13 @@ public class Main {
         menu.add(water);
         menu.add(greentea);
 
+        // Startup display
         System.out.println("\nWelcome to the Online Ordering App!");
         System.out.println("\nAccessing " + place.getPlaceName() + "!");
         System.out.println("----------------------------------------------------------------");
         Thread.sleep(2000);
-        
-        
 
-
+        // Continous loop that displays the menu and allows user to add to cart and other decisions
         while (true) {
             for (int i = 0; i < menu.size(); i++) {
                 System.out.println("(" + i + ")\n" + menu.get(i));
@@ -80,8 +80,8 @@ public class Main {
             int option = Integer.parseInt(key.readLine());
 
             if (option >= 0 && option <= 13) {
-                cart.add(menu.get(option));
-                total += menu.get(option).getPrice();
+                cart.add(menu.get(option)); // add item into the cart arraylist
+                total += menu.get(option).getPrice(); // sum up the total 
             }
             else if (option == 100) {
                 System.out.println("Exiting program...");
@@ -108,7 +108,7 @@ public class Main {
         Thread.sleep(500);
 
         for (int i = 0; i < cart.size(); i++) {
-            System.out.println(" - " + cart.get(i).getName());
+            System.out.println(" - " + cart.get(i).getName()); // list out everything in the cart
             Thread.sleep(150);
         }
 
