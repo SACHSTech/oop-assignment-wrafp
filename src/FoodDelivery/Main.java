@@ -22,13 +22,8 @@ public class Main {
         double finalTotal;
         double tax;
         
-
-        System.out.println("\nWelcome to the Online Ordering App!");
-        System.out.println("\nAccessing Outrageous Food Place's Menu");
-        System.out.println("----------------------------------------------------------------");
-        Thread.sleep(2000);
-        
-        // Create menu objects
+        // Object initialization
+        Restaurant place = new Restaurant("Outrageous Food Place");
         Food pizza = new Food("Pizza", 16, false, false, false);
         Food salad = new Food("Salad", 12, false, true, false);
         Food chickensoup = new Food("Chicken Soup", 10, false, false, true);
@@ -59,6 +54,13 @@ public class Main {
         menu.add(water);
         menu.add(greentea);
 
+        System.out.println("\nWelcome to the Online Ordering App!");
+        System.out.println("\nAccessing " + place.getPlaceName() + "!");
+        System.out.println("----------------------------------------------------------------");
+        Thread.sleep(2000);
+        
+        
+
 
         while (true) {
             for (int i = 0; i < menu.size(); i++) {
@@ -69,7 +71,6 @@ public class Main {
             System.out.println("---------------------------");
             System.out.println("Select your order: (0-13)-Add to Cart (99)-Checkout (100)-Cancel\nEnter corresponding value: ");
             int option = Integer.parseInt(key.readLine());
-            System.out.println("---------------------------");
 
             if (option >= 0 && option <= 13) {
                 cart.add(menu.get(option));
@@ -80,7 +81,7 @@ public class Main {
                 System.exit(option);
             }
             else if (option == 99) {
-                System.out.println("\nProceeding to Cart...");
+                System.out.println("\nProceeding to Cart...\n");
                 Thread.sleep(2000);
                 break;
             }
@@ -89,11 +90,8 @@ public class Main {
             }
             
             Thread.sleep(500);
-
-            for (int i = 0; i < cart.size(); i++) {
-                System.out.println("Added " + menu.get(option).getName() + " to cart.");
-            }
-
+            System.out.println("Added " + menu.get(option).getName() + " to cart."); // Displays item added to cart
+            System.out.println("---------------------------");
             Thread.sleep(800);
         }
         
@@ -103,7 +101,7 @@ public class Main {
         Thread.sleep(500);
 
         for (int i = 0; i < cart.size(); i++) {
-            System.out.println(cart.get(i).getName());
+            System.out.println(" - " + cart.get(i).getName());
             Thread.sleep(150);
         }
 
@@ -118,6 +116,8 @@ public class Main {
 
         
         // Output the price of the order
+        Thread.sleep(2000);
+        System.out.println("\nReceipt: " +  place.getPlaceName() + "\n------------------------");
         System.out.println("Total: $" + currencyFormat.format(total));
         tax = (total - discount) * 0.13;
         finalTotal = tax + total;
@@ -128,5 +128,6 @@ public class Main {
 
         System.out.println("Tax: $" + currencyFormat.format(tax));
         System.out.println("Subtotal: $" + currencyFormat.format(finalTotal));
+        System.out.println("\nThanks for ordering at " + place.getPlaceName() + " :)");
     }
 }
