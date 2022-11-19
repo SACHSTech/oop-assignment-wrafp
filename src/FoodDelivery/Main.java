@@ -1,13 +1,8 @@
 package FoodDelivery;
 import FoodDelivery.*;
-
-import static org.junit.jupiter.api.DynamicTest.stream;
-
 import java.io.*;
 import java.text.*;
 import java.util.ArrayList;
-
-import javax.swing.plaf.synth.SynthSeparatorUI;
 
 /**
  * Insert description
@@ -80,7 +75,6 @@ public class Main {
                 cart.add(menu.get(option));
                 total += menu.get(option).getPrice();
             }
-
             else if (option == 100) {
                 System.out.println("Exiting program...");
                 System.exit(option);
@@ -93,7 +87,7 @@ public class Main {
             else { 
                 System.out.println("Invalid value.");
             }
-
+            
             Thread.sleep(500);
 
             for (int i = 0; i < cart.size(); i++) {
