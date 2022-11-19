@@ -19,9 +19,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         // Initialize 
         BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<Item> menu = new ArrayList<>();
-        ArrayList<Item> cart = new ArrayList<>();
-        NumberFormat currencyFormat = new DecimalFormat("#,##0.00");
+        ArrayList<Item> menu = new ArrayList<>(); // stores the menu
+        ArrayList<Item> cart = new ArrayList<>(); // stores user purchases
+        NumberFormat currencyFormat = new DecimalFormat("#,##0.00"); // currency format
 
         // Variable initialization
         double total = 0;
