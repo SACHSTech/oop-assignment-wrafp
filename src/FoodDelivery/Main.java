@@ -7,6 +7,8 @@ import java.io.*;
 import java.text.*;
 import java.util.ArrayList;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 /**
  * Insert description
  */
@@ -92,9 +94,26 @@ public class Main {
                 System.out.println("Invalid value.");
             }
 
+            Thread.sleep(500);
+
+            for (int i = 0; i < cart.size(); i++) {
+                System.out.println("Added " + menu.get(option).getName() + " to cart.");
+            }
+
             Thread.sleep(800);
         }
         
+
+        // Checkout Phase
+        System.out.println("Items Purchased:");
+        Thread.sleep(500);
+
+        for (int i = 0; i < cart.size(); i++) {
+            System.out.println(cart.get(i).getName());
+            Thread.sleep(150);
+        }
+
+
         // Check for discount 
         if (total >= 50) {
             discount = total * .1;
@@ -103,7 +122,9 @@ public class Main {
             discount = total * .2;
         }
 
-        System.out.println("Total: $ " + currencyFormat.format(total));
+        
+        // Output the price of the order
+        System.out.println("Total: $" + currencyFormat.format(total));
         tax = (total - discount) * 0.13;
         finalTotal = tax + total;
         
@@ -113,10 +134,5 @@ public class Main {
 
         System.out.println("Tax: $" + currencyFormat.format(tax));
         System.out.println("Subtotal: $" + currencyFormat.format(finalTotal));
-        
-       
-        
-
-
     }
 }
