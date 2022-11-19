@@ -6,7 +6,6 @@ public class Item {
     // Instance variables
     private String name;
     private double price;
-    private boolean isBought;
 
     // Constructor
     public Item(String theName, double thePrice) {
@@ -22,9 +21,4 @@ public class Item {
     public double getPrice() {
         return price;
     }
-
-    public void setIsBought() {
-        isBought = true;
-    }
-
 }
